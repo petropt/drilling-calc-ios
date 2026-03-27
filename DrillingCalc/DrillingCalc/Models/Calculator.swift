@@ -196,8 +196,8 @@ enum Calculator: String, CaseIterable, Identifiable {
             ]
         case .bht:
             return [
-                InputField("surfaceTemp", label: "Surface Temperature", unit: "F", placeholder: "e.g. 70"),
-                InputField("gradient", label: "Geothermal Gradient", unit: "F/100ft", placeholder: "e.g. 1.2"),
+                InputField("surfaceTemp", label: "Surface Temperature", unit: "F", placeholder: "e.g. 70", defaultValue: 70),
+                InputField("gradient", label: "Geothermal Gradient", unit: "F/100ft", placeholder: "e.g. 1.2", defaultValue: 1.2),
                 InputField("tvd", label: "True Vertical Depth", unit: "ft", placeholder: "e.g. 10000"),
             ]
         case .killMW:
