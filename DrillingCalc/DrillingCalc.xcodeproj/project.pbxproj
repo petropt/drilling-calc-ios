@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		17F2BD48542115DF5F822638 /* CalculatorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622BACF707975AC71C8BCF7F /* CalculatorListView.swift */; };
+		1EE7F6006A8C6C350304C56C /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE1C2AF4A8C12441BC1EB15 /* AppTheme.swift */; };
+		5097362394FF3E60A239543D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CEB0DE9B93EDA13AAB33105 /* Assets.xcassets */; };
+		57A229A55B9FFFBE46267068 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540362752AB65A053F4648AA /* ContentView.swift */; };
+		58924DCD68760CE36D9969C0 /* WellControlCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBECE7750A558178111F9EE /* WellControlCalcs.swift */; };
+		59186F950677BB2183FB3888 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD403FDCC76CC7923F9BA04 /* SettingsView.swift */; };
+		5E718E547CD9BC5D3B78912B /* DrillingCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A0250D4BF27F89C9321F18 /* DrillingCalcApp.swift */; };
+		7894CFAB6D594D035C9ECBBA /* SurveyCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339B39DE26427C5D77960809 /* SurveyCalcs.swift */; };
+		8B25B81E04C60AEF19772445 /* MiscCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C694156EECCA4B9016DBC3 /* MiscCalcs.swift */; };
+		8EA519B9983F6F5D86A60A9E /* PressureCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53862C6825C7E7EF9C755756 /* PressureCalcs.swift */; };
+		8F5C748946362387D5001774 /* EngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52B888B7890734ECDA025AB /* EngineTests.swift */; };
+		94A1C2EF7F4A18B084F30CE8 /* HydraulicsCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C726BDA09D92C506F29D949D /* HydraulicsCalcs.swift */; };
+		B8530C3A310E672F392535FF /* CalculatorFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778F7AC436B12E07AB0D98F9 /* CalculatorFormView.swift */; };
+		F1C275F2E671BE15D204F089 /* CasingCalcs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73289F99AE3CAD8F83DFDE21 /* CasingCalcs.swift */; };
+		F7FE11A1D2E5A9BE47B790A8 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A37BA9AEB3D71A125061D86 /* Calculator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		23FA808255B1F1734BA88123 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D06D9A7DD4B7C0B0BA2C6342 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CA43F2F5969E7F5E8C06637;
+			remoteInfo = DrillingCalc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A37BA9AEB3D71A125061D86 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		1CBECE7750A558178111F9EE /* WellControlCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellControlCalcs.swift; sourceTree = "<group>"; };
+		339B39DE26427C5D77960809 /* SurveyCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCalcs.swift; sourceTree = "<group>"; };
+		53862C6825C7E7EF9C755756 /* PressureCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressureCalcs.swift; sourceTree = "<group>"; };
+		540362752AB65A053F4648AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		622BACF707975AC71C8BCF7F /* CalculatorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorListView.swift; sourceTree = "<group>"; };
+		6CEB0DE9B93EDA13AAB33105 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		72C694156EECCA4B9016DBC3 /* MiscCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscCalcs.swift; sourceTree = "<group>"; };
+		73289F99AE3CAD8F83DFDE21 /* CasingCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasingCalcs.swift; sourceTree = "<group>"; };
+		778F7AC436B12E07AB0D98F9 /* CalculatorFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorFormView.swift; sourceTree = "<group>"; };
+		7BD403FDCC76CC7923F9BA04 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7C1E1A690A0B66A6981112E3 /* DrillingCalcTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = DrillingCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CACBFD05351977996948F0F /* DrillingCalc.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = DrillingCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		91A0250D4BF27F89C9321F18 /* DrillingCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrillingCalcApp.swift; sourceTree = "<group>"; };
+		C52B888B7890734ECDA025AB /* EngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineTests.swift; sourceTree = "<group>"; };
+		C726BDA09D92C506F29D949D /* HydraulicsCalcs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HydraulicsCalcs.swift; sourceTree = "<group>"; };
+		EEE1C2AF4A8C12441BC1EB15 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0729E3729F16B8832AABA4ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				778F7AC436B12E07AB0D98F9 /* CalculatorFormView.swift */,
+				622BACF707975AC71C8BCF7F /* CalculatorListView.swift */,
+				540362752AB65A053F4648AA /* ContentView.swift */,
+				7BD403FDCC76CC7923F9BA04 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		13194C6379597799817E0D35 = {
+			isa = PBXGroup;
+			children = (
+				78B7AAEB2B11B078A93DE056 /* DrillingCalc */,
+				88073FE027937F5E41728D26 /* DrillingCalcTests */,
+				67AA355363D7F0A861A131A8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1F4E5E9CD91874EC8AE6C838 /* Engines */ = {
+			isa = PBXGroup;
+			children = (
+				73289F99AE3CAD8F83DFDE21 /* CasingCalcs.swift */,
+				C726BDA09D92C506F29D949D /* HydraulicsCalcs.swift */,
+				72C694156EECCA4B9016DBC3 /* MiscCalcs.swift */,
+				53862C6825C7E7EF9C755756 /* PressureCalcs.swift */,
+				339B39DE26427C5D77960809 /* SurveyCalcs.swift */,
+				1CBECE7750A558178111F9EE /* WellControlCalcs.swift */,
+			);
+			path = Engines;
+			sourceTree = "<group>";
+		};
+		67AA355363D7F0A861A131A8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7CACBFD05351977996948F0F /* DrillingCalc.app */,
+				7C1E1A690A0B66A6981112E3 /* DrillingCalcTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		78B7AAEB2B11B078A93DE056 /* DrillingCalc */ = {
+			isa = PBXGroup;
+			children = (
+				6CEB0DE9B93EDA13AAB33105 /* Assets.xcassets */,
+				91A0250D4BF27F89C9321F18 /* DrillingCalcApp.swift */,
+				1F4E5E9CD91874EC8AE6C838 /* Engines */,
+				A56233D9C5456730E8F2CB1C /* Models */,
+				910582229180FA9A00489A28 /* Theme */,
+				0729E3729F16B8832AABA4ED /* Views */,
+			);
+			path = DrillingCalc;
+			sourceTree = "<group>";
+		};
+		88073FE027937F5E41728D26 /* DrillingCalcTests */ = {
+			isa = PBXGroup;
+			children = (
+				C52B888B7890734ECDA025AB /* EngineTests.swift */,
+			);
+			path = DrillingCalcTests;
+			sourceTree = "<group>";
+		};
+		910582229180FA9A00489A28 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				EEE1C2AF4A8C12441BC1EB15 /* AppTheme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		A56233D9C5456730E8F2CB1C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A37BA9AEB3D71A125061D86 /* Calculator.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		662A433A9749FDF7C817B52F /* DrillingCalcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEC8FA3AE77CF632EBDD8379 /* Build configuration list for PBXNativeTarget "DrillingCalcTests" */;
+			buildPhases = (
+				34898C9C80914BB32EE17C84 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B599C792BBD03FC69AC8BF70 /* PBXTargetDependency */,
+			);
+			name = DrillingCalcTests;
+			packageProductDependencies = (
+			);
+			productName = DrillingCalcTests;
+			productReference = 7C1E1A690A0B66A6981112E3 /* DrillingCalcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7CA43F2F5969E7F5E8C06637 /* DrillingCalc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1979AF7E4C40715B344D0105 /* Build configuration list for PBXNativeTarget "DrillingCalc" */;
+			buildPhases = (
+				811E2B8210E213D9D5C959A1 /* Sources */,
+				5B8EA3ECFF0B02743988C923 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DrillingCalc;
+			packageProductDependencies = (
+			);
+			productName = DrillingCalc;
+			productReference = 7CACBFD05351977996948F0F /* DrillingCalc.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D06D9A7DD4B7C0B0BA2C6342 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 037E91A69E680B624DE0AF7B /* Build configuration list for PBXProject "DrillingCalc" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 13194C6379597799817E0D35;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 67AA355363D7F0A861A131A8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7CA43F2F5969E7F5E8C06637 /* DrillingCalc */,
+				662A433A9749FDF7C817B52F /* DrillingCalcTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B8EA3ECFF0B02743988C923 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5097362394FF3E60A239543D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		34898C9C80914BB32EE17C84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F5C748946362387D5001774 /* EngineTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		811E2B8210E213D9D5C959A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EE7F6006A8C6C350304C56C /* AppTheme.swift in Sources */,
+				F7FE11A1D2E5A9BE47B790A8 /* Calculator.swift in Sources */,
+				B8530C3A310E672F392535FF /* CalculatorFormView.swift in Sources */,
+				17F2BD48542115DF5F822638 /* CalculatorListView.swift in Sources */,
+				F1C275F2E671BE15D204F089 /* CasingCalcs.swift in Sources */,
+				57A229A55B9FFFBE46267068 /* ContentView.swift in Sources */,
+				5E718E547CD9BC5D3B78912B /* DrillingCalcApp.swift in Sources */,
+				94A1C2EF7F4A18B084F30CE8 /* HydraulicsCalcs.swift in Sources */,
+				8B25B81E04C60AEF19772445 /* MiscCalcs.swift in Sources */,
+				8EA519B9983F6F5D86A60A9E /* PressureCalcs.swift in Sources */,
+				59186F950677BB2183FB3888 /* SettingsView.swift in Sources */,
+				7894CFAB6D594D035C9ECBBA /* SurveyCalcs.swift in Sources */,
+				58924DCD68760CE36D9969C0 /* WellControlCalcs.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B599C792BBD03FC69AC8BF70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7CA43F2F5969E7F5E8C06637 /* DrillingCalc */;
+			targetProxy = 23FA808255B1F1734BA88123 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1814BA0EE98D3F06D9CFF0D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.groundworkanalytics.DrillingCalcTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrillingCalc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrillingCalc";
+			};
+			name = Release;
+		};
+		1E8EC4FE49A4960490934B54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		33389D8D11AAF2B06F194A4B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_CFBundleDisplayName = "Drilling Calc";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.groundworkanalytics.DrillingCalc;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9C4B0D4AE9C35529DF18B223 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				INFOPLIST_KEY_CFBundleDisplayName = "Drilling Calc";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.groundworkanalytics.DrillingCalc;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BE5D121FE64BF47FD3BE5721 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_GENERATION_MODE = GeneratedFile;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.groundworkanalytics.DrillingCalcTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DrillingCalc.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DrillingCalc";
+			};
+			name = Debug;
+		};
+		F40E095D75B0F3556A188310 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		037E91A69E680B624DE0AF7B /* Build configuration list for PBXProject "DrillingCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F40E095D75B0F3556A188310 /* Debug */,
+				1E8EC4FE49A4960490934B54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1979AF7E4C40715B344D0105 /* Build configuration list for PBXNativeTarget "DrillingCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				33389D8D11AAF2B06F194A4B /* Debug */,
+				9C4B0D4AE9C35529DF18B223 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CEC8FA3AE77CF632EBDD8379 /* Build configuration list for PBXNativeTarget "DrillingCalcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE5D121FE64BF47FD3BE5721 /* Debug */,
+				1814BA0EE98D3F06D9CFF0D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D06D9A7DD4B7C0B0BA2C6342 /* Project object */;
+}
