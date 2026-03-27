@@ -4,15 +4,33 @@ struct CalculatorRow: View {
     let calculator: Calculator
 
     var body: some View {
-        HStack {
-            Text(calculator.name)
-                .font(.body)
-                .foregroundColor(.white)
+        HStack(spacing: 12) {
+            Image(systemName: calculator.icon)
+                .font(.title3)
+                .foregroundColor(calculator.tier == .free ? AppTheme.accent : .gray)
+                .frame(width: 32)
+
+            VStack(alignment: .leading, spacing: 2) {
+                Text(calculator.name)
+                    .font(.body.weight(.medium))
+                    .foregroundColor(.white)
+                Text(calculator.shortDescription)
+                    .font(.caption)
+                    .foregroundColor(AppTheme.secondaryText)
+                    .lineLimit(1)
+            }
+
             Spacer()
+
             if calculator.tier == .pro {
                 ProBadge()
             }
+
+            Image(systemName: "chevron.right")
+                .font(.caption.weight(.semibold))
+                .foregroundColor(Color.white.opacity(0.25))
         }
+        .padding(.vertical, 8)
     }
 }
 
@@ -58,9 +76,16 @@ struct CalculatorListView: View {
                             }
                         }
                     } header: {
-                        Label(group.category.rawValue, systemImage: group.category.icon)
-                            .foregroundColor(AppTheme.accent)
-                            .font(.headline)
+                        HStack(spacing: 8) {
+                            Image(systemName: group.category.icon)
+                                .font(.subheadline.weight(.bold))
+                            Text(group.category.rawValue.uppercased())
+                                .font(.subheadline.weight(.bold))
+                                .tracking(1.5)
+                        }
+                        .foregroundColor(AppTheme.accent)
+                        .padding(.top, 12)
+                        .padding(.bottom, 4)
                     }
                 }
             }

@@ -10,6 +10,7 @@ struct CalculatorFormView: View {
     @State private var showFormula = false
     @State private var validationErrors: Set<String> = []
     @State private var showShareSheet = false
+    @State private var resultsVisible = false
 
     private var favoriteIDs: Set<String> {
         get { (try? JSONDecoder().decode(Set<String>.self, from: favoritesData)) ?? [] }
@@ -130,8 +131,14 @@ struct CalculatorFormView: View {
                     // Results
                     if !results.isEmpty {
                         VStack(spacing: 8) {
-                            ForEach(results) { item in
+                            ForEach(Array(results.enumerated()), id: \.element.id) { index, item in
                                 ResultCard(item: item)
+                                    .opacity(resultsVisible ? 1 : 0)
+                                    .offset(y: resultsVisible ? 0 : 12)
+                                    .animation(
+                                        .easeOut(duration: 0.35).delay(Double(index) * 0.08),
+                                        value: resultsVisible
+                                    )
                             }
 
                             // Share button
@@ -147,9 +154,10 @@ struct CalculatorFormView: View {
                                 .background(AppTheme.cardBackground)
                                 .cornerRadius(10)
                             }
+                            .opacity(resultsVisible ? 1 : 0)
+                            .animation(.easeOut(duration: 0.35).delay(Double(results.count) * 0.08), value: resultsVisible)
                         }
                         .id("results")
-                        .transition(.opacity)
                     }
 
                     // Formula disclosure
@@ -266,6 +274,8 @@ struct CalculatorFormView: View {
             return
         }
 
+        resultsVisible = false
+
         withAnimation {
             switch calculator {
             case .hydrostatic:
@@ -313,6 +323,11 @@ struct CalculatorFormView: View {
             case .kickTolerance:
                 results = WellControlCalcs.kickTolerance(fracGrad: val("fracGrad"), mw: val("mw"), tvd: val("tvd"), shoeTVD: val("shoeTVD"))
             }
+        }
+
+        // Trigger staggered result animation
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            resultsVisible = true
         }
 
         // Save to history

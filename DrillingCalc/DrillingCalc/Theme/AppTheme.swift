@@ -12,11 +12,17 @@ enum AppTheme {
         endPoint: .trailing
     )
 
+    static let resultBorderGradient = LinearGradient(
+        colors: [accent, Color.orange.opacity(0.4), Color.clear],
+        startPoint: .topLeading,
+        endPoint: .bottomTrailing
+    )
+
     // Rig-floor friendly font sizes
     static let inputLabelFont: Font = .subheadline.weight(.medium)
     static let inputUnitFont: Font = .caption.weight(.medium)
     static let inputValueFont: Font = .body
-    static let resultValueFont: Font = .title2.bold()
+    static let resultValueFont: Font = .system(.title2, design: .monospaced).bold()
     static let resultLabelFont: Font = .subheadline
 }
 
@@ -44,16 +50,20 @@ struct ResultCard: View {
             HStack(spacing: 4) {
                 Text(item.value)
                     .font(AppTheme.resultValueFont)
-                    .foregroundColor(.white)
+                    .foregroundColor(AppTheme.accent)
                 if !item.unit.isEmpty {
                     Text(item.unit)
-                        .font(.caption)
-                        .foregroundColor(AppTheme.accent)
+                        .font(.caption.weight(.medium))
+                        .foregroundColor(AppTheme.secondaryText)
                 }
             }
         }
         .padding()
         .background(AppTheme.cardBackground)
         .cornerRadius(12)
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(AppTheme.resultBorderGradient, lineWidth: 1)
+        )
     }
 }

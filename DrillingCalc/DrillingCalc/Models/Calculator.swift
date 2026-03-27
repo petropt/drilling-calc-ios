@@ -112,6 +112,56 @@ enum Calculator: String, CaseIterable, Identifiable {
         }
     }
 
+    var icon: String {
+        switch self {
+        case .hydrostatic: return "arrow.down.to.line"
+        case .ecd: return "arrow.up.arrow.down.circle"
+        case .fpg: return "chart.line.downtrend.xyaxis"
+        case .mudWeightEquivalent: return "scalemass"
+        case .buoyancy: return "water.waves"
+        case .pipeCapacity: return "pipe.and.drop"
+        case .annularCapacity: return "circle.dashed"
+        case .annularVelocity: return "arrow.up.circle"
+        case .doglegSeverity: return "arrow.triangle.turn.up.right.diamond"
+        case .bht: return "thermometer.high"
+        case .killMW: return "exclamationmark.shield"
+        case .icp: return "gauge.with.needle"
+        case .fcp: return "gauge.with.needle.fill"
+        case .maasp: return "arrow.up.to.line"
+        case .kickTolerance: return "exclamationmark.triangle"
+        case .nozzleTFA: return "circle.grid.3x3"
+        case .bitHydraulics: return "drop.triangle"
+        case .casingBurst: return "burst"
+        case .cementVolume: return "square.stack.3d.up"
+        case .swabPressure: return "arrow.down.circle"
+        }
+    }
+
+    var shortDescription: String {
+        switch self {
+        case .hydrostatic: return "P = 0.052 × MW × TVD"
+        case .ecd: return "Equivalent circulating density"
+        case .fpg: return "Pressure gradient from formation pressure"
+        case .mudWeightEquivalent: return "Equivalent mud weight from pressure"
+        case .buoyancy: return "Weight reduction factor in fluid"
+        case .pipeCapacity: return "Internal volume of pipe"
+        case .annularCapacity: return "Volume between pipe and hole"
+        case .annularVelocity: return "Fluid velocity in the annulus"
+        case .doglegSeverity: return "Wellbore curvature per 100 ft"
+        case .bht: return "Temperature at total depth"
+        case .killMW: return "Required mud weight to kill the well"
+        case .icp: return "Driller's method initial pressure"
+        case .fcp: return "Driller's method final pressure"
+        case .maasp: return "Max allowable annular surface pressure"
+        case .kickTolerance: return "Max kick intensity before fracture"
+        case .nozzleTFA: return "Total flow area of bit nozzles"
+        case .bitHydraulics: return "Bit pressure drop and HSI"
+        case .casingBurst: return "Barlow's equation burst rating"
+        case .cementVolume: return "Annular cement with excess factor"
+        case .swabPressure: return "Pressure reduction from pipe movement"
+        }
+    }
+
     var category: CalculatorCategory {
         switch self {
         case .hydrostatic, .ecd, .fpg, .mudWeightEquivalent:

@@ -20,7 +20,7 @@ struct ContentView: View {
 
             SettingsView()
                 .tabItem {
-                    Label("Settings", systemImage: "gearshape")
+                    Label("Settings", systemImage: "gearshape.fill")
                 }
         }
         .tint(AppTheme.accent)
