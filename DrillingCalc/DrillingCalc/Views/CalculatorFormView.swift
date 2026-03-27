@@ -11,6 +11,8 @@ struct CalculatorFormView: View {
     @State private var validationErrors: Set<String> = []
     @State private var showShareSheet = false
     @State private var resultsVisible = false
+    @State private var showProUpgrade = false
+    @FocusState private var focusedField: String?
 
     private var favoriteIDs: Set<String> {
         get { (try? JSONDecoder().decode(Set<String>.self, from: favoritesData)) ?? [] }
@@ -43,7 +45,7 @@ struct CalculatorFormView: View {
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView {
-                VStack(spacing: 20) {
+                VStack(spacing: AppTheme.spacingXL) {
                     // Tier badge
                     if calculator.tier == .pro {
                         HStack {
@@ -56,9 +58,9 @@ struct CalculatorFormView: View {
                     }
 
                     // Input fields
-                    VStack(spacing: 14) {
+                    VStack(spacing: AppTheme.spacingLG) {
                         ForEach(calculator.inputs) { field in
-                            VStack(alignment: .leading, spacing: 6) {
+                            VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
                                 HStack {
                                     Text(field.label)
                                         .font(AppTheme.inputLabelFont)
@@ -76,6 +78,7 @@ struct CalculatorFormView: View {
                                         .textFieldStyle(.plain)
                                         .font(AppTheme.inputValueFont)
                                         .foregroundColor(.white)
+                                        .focused($focusedField, equals: field.id)
 
                                     // Clear button
                                     if !(values[field.id, default: ""].isEmpty) {
@@ -90,53 +93,63 @@ struct CalculatorFormView: View {
                                         .buttonStyle(.plain)
                                     }
                                 }
-                                .padding()
+                                .padding(AppTheme.spacingLG)
                                 .background(AppTheme.cardBackground)
-                                .cornerRadius(10)
+                                .cornerRadius(AppTheme.spacingMD)
                                 .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(validationErrors.contains(field.id) ? Color.red : Color.clear, lineWidth: 1.5)
+                                    // Orange bottom border on focus, red full border on error
+                                    Group {
+                                        if validationErrors.contains(field.id) {
+                                            RoundedRectangle(cornerRadius: AppTheme.spacingMD)
+                                                .stroke(Color.red, lineWidth: 1.5)
+                                        } else if focusedField == field.id {
+                                            VStack {
+                                                Spacer()
+                                                AppTheme.accent
+                                                    .frame(height: 2)
+                                                    .cornerRadius(1)
+                                            }
+                                            .clipShape(RoundedRectangle(cornerRadius: AppTheme.spacingMD))
+                                        }
+                                    }
                                 )
+                                .animation(.easeInOut(duration: 0.2), value: focusedField)
 
                                 // Inline validation error
                                 if validationErrors.contains(field.id) {
                                     Text("\(field.label) is required")
-                                        .font(.caption2)
+                                        .font(.caption)
                                         .foregroundColor(.red)
                                 }
                             }
                         }
                     }
 
-                    // Calculate button
-                    Button(action: {
-                        calculate()
-                        // Auto-scroll to results
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                            withAnimation {
-                                proxy.scrollTo("results", anchor: .top)
-                            }
-                        }
-                    }) {
-                        Text("Calculate")
-                            .font(.title3.bold())
-                            .foregroundColor(.black)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 16)
-                            .background(AppTheme.accent)
-                            .cornerRadius(12)
+                    // Formula disclosure
+                    DisclosureGroup(isExpanded: $showFormula) {
+                        Text(calculator.formula)
+                            .font(.system(.caption, design: .monospaced))
+                            .foregroundColor(AppTheme.secondaryText)
+                            .padding(.top, AppTheme.spacingSM)
+                    } label: {
+                        Text("Formula")
+                            .font(.headline)
+                            .foregroundColor(AppTheme.accent)
                     }
-                    .padding(.top, 4)
+                    .tint(AppTheme.accent)
+                    .padding(AppTheme.spacingLG)
+                    .background(AppTheme.cardBackground)
+                    .cornerRadius(AppTheme.spacingMD)
 
                     // Results
                     if !results.isEmpty {
-                        VStack(spacing: 8) {
+                        VStack(spacing: AppTheme.spacingSM) {
                             ForEach(Array(results.enumerated()), id: \.element.id) { index, item in
                                 ResultCard(item: item)
                                     .opacity(resultsVisible ? 1 : 0)
-                                    .offset(y: resultsVisible ? 0 : 12)
+                                    .offset(y: resultsVisible ? 0 : AppTheme.spacingMD)
                                     .animation(
-                                        .easeOut(duration: 0.35).delay(Double(index) * 0.08),
+                                        .spring(response: 0.45, dampingFraction: 0.75).delay(Double(index) * 0.08),
                                         value: resultsVisible
                                     )
                             }
@@ -147,36 +160,49 @@ struct CalculatorFormView: View {
                                     Image(systemName: "square.and.arrow.up")
                                     Text("Share Results")
                                 }
-                                .font(.subheadline.weight(.medium))
+                                .font(.body.weight(.medium))
                                 .foregroundColor(AppTheme.accent)
                                 .frame(maxWidth: .infinity)
-                                .padding(.vertical, 12)
+                                .padding(.vertical, AppTheme.spacingMD)
                                 .background(AppTheme.cardBackground)
-                                .cornerRadius(10)
+                                .cornerRadius(AppTheme.spacingMD)
                             }
+                            .buttonStyle(ScaleButtonStyle())
                             .opacity(resultsVisible ? 1 : 0)
-                            .animation(.easeOut(duration: 0.35).delay(Double(results.count) * 0.08), value: resultsVisible)
+                            .animation(.spring(response: 0.45, dampingFraction: 0.75).delay(Double(results.count) * 0.08), value: resultsVisible)
                         }
                         .id("results")
                     }
 
-                    // Formula disclosure
-                    DisclosureGroup(isExpanded: $showFormula) {
-                        Text(calculator.formula)
-                            .font(.system(.caption, design: .monospaced))
-                            .foregroundColor(AppTheme.secondaryText)
-                            .padding(.top, 8)
-                    } label: {
-                        Text("Formula")
-                            .font(.subheadline.bold())
-                            .foregroundColor(AppTheme.accent)
-                    }
-                    .tint(AppTheme.accent)
-                    .padding()
-                    .background(AppTheme.cardBackground)
-                    .cornerRadius(12)
+                    // Bottom spacer for sticky calculate button
+                    Spacer()
+                        .frame(height: AppTheme.spacing3XL)
                 }
-                .padding()
+                .padding(AppTheme.spacingLG)
+            }
+            // Sticky Calculate button in thumb zone
+            .safeAreaInset(edge: .bottom) {
+                Button(action: {
+                    calculate()
+                    // Auto-scroll to results
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        withAnimation {
+                            proxy.scrollTo("results", anchor: .top)
+                        }
+                    }
+                }) {
+                    Text("Calculate")
+                        .font(.headline)
+                        .foregroundColor(.black)
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, AppTheme.spacingLG)
+                        .background(AppTheme.accent)
+                        .cornerRadius(AppTheme.spacingMD)
+                }
+                .buttonStyle(ScaleButtonStyle())
+                .padding(.horizontal, AppTheme.spacingLG)
+                .padding(.vertical, AppTheme.spacingMD)
+                .background(.ultraThinMaterial)
             }
         }
         .background(AppTheme.background)
@@ -203,6 +229,10 @@ struct CalculatorFormView: View {
         }
         .sheet(isPresented: $showShareSheet) {
             ShareSheet(items: [shareText])
+        }
+        .sheet(isPresented: $showProUpgrade) {
+            ProUpgradeSheet()
+                .presentationDetents([.medium])
         }
     }
 

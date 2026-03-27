@@ -4,13 +4,13 @@ struct CalculatorRow: View {
     let calculator: Calculator
 
     var body: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: AppTheme.spacingMD) {
             Image(systemName: calculator.icon)
-                .font(.title3)
+                .font(.headline)
                 .foregroundColor(calculator.tier == .free ? AppTheme.accent : .gray)
-                .frame(width: 32)
+                .frame(width: AppTheme.spacingXXL)
 
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: AppTheme.spacingXS) {
                 Text(calculator.name)
                     .font(.body.weight(.medium))
                     .foregroundColor(.white)
@@ -30,7 +30,7 @@ struct CalculatorRow: View {
                 .font(.caption.weight(.semibold))
                 .foregroundColor(Color.white.opacity(0.25))
         }
-        .padding(.vertical, 8)
+        .padding(.vertical, AppTheme.spacingSM)
     }
 }
 
@@ -76,16 +76,16 @@ struct CalculatorListView: View {
                             }
                         }
                     } header: {
-                        HStack(spacing: 8) {
+                        HStack(spacing: AppTheme.spacingSM) {
                             Image(systemName: group.category.icon)
-                                .font(.subheadline.weight(.bold))
+                                .font(.headline)
                             Text(group.category.rawValue.uppercased())
-                                .font(.subheadline.weight(.bold))
+                                .font(.headline)
                                 .tracking(1.5)
                         }
                         .foregroundColor(AppTheme.accent)
-                        .padding(.top, 12)
-                        .padding(.bottom, 4)
+                        .padding(.top, AppTheme.spacingMD)
+                        .padding(.bottom, AppTheme.spacingXS)
                     }
                 }
             }

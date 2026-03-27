@@ -4,6 +4,12 @@ struct SettingsView: View {
     @StateObject private var history = HistoryManager.shared
     @State private var showClearConfirmation = false
 
+    private var appVersion: String {
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0.0"
+        let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "1"
+        return "\(version) (\(build))"
+    }
+
     var body: some View {
         NavigationStack {
             List {
@@ -46,7 +52,8 @@ struct SettingsView: View {
                         Text("Version")
                             .foregroundColor(.white)
                         Spacer()
-                        Text("1.0.0")
+                        Text(appVersion)
+                            .font(.caption)
                             .foregroundColor(AppTheme.secondaryText)
                     }
                     .listRowBackground(AppTheme.cardBackground)
@@ -60,10 +67,10 @@ struct SettingsView: View {
                     }
                     .listRowBackground(AppTheme.cardBackground)
 
-                    VStack(alignment: .leading, spacing: 4) {
+                    VStack(alignment: .leading, spacing: AppTheme.spacingXS) {
                         Text("Built by Groundwork Analytics")
                             .foregroundColor(.white)
-                        Link("groundworkanalytics.com", destination: URL(string: "https://groundworkanalytics.com")!)
+                        Link("petropt.com", destination: URL(string: "https://petropt.com")!)
                             .font(.caption)
                             .foregroundColor(AppTheme.accent)
                     }

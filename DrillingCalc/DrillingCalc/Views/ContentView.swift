@@ -44,18 +44,19 @@ struct FavoritesView: View {
         NavigationStack {
             Group {
                 if favoriteCalcs.isEmpty {
-                    VStack(spacing: 16) {
-                        Image(systemName: "star")
-                            .font(.system(size: 48))
+                    VStack(spacing: AppTheme.spacingLG) {
+                        Image(systemName: "star.slash")
+                            .font(.system(size: AppTheme.spacing3XL))
                             .foregroundColor(AppTheme.secondaryText)
                         Text("No favorites yet")
+                            .font(.headline)
                             .foregroundColor(AppTheme.secondaryText)
-                        Text("Tap the star icon on any calculator or swipe right in the list.")
+                        Text("Swipe right on any calculator to add it here")
                             .font(.caption)
                             .foregroundColor(AppTheme.secondaryText)
                             .multilineTextAlignment(.center)
                     }
-                    .padding()
+                    .padding(AppTheme.spacingXL)
                 } else {
                     List(favoriteCalcs) { calc in
                         NavigationLink(destination: CalculatorFormView(calculator: calc)) {
@@ -99,18 +100,19 @@ struct HistoryView: View {
         NavigationStack {
             Group {
                 if history.entries.isEmpty {
-                    VStack(spacing: 16) {
-                        Image(systemName: "clock")
-                            .font(.system(size: 48))
+                    VStack(spacing: AppTheme.spacingLG) {
+                        Image(systemName: "clock.badge.questionmark")
+                            .font(.system(size: AppTheme.spacing3XL))
                             .foregroundColor(AppTheme.secondaryText)
                         Text("No calculations yet")
+                            .font(.headline)
                             .foregroundColor(AppTheme.secondaryText)
-                        Text("Your calculation results will appear here.")
+                        Text("Your calculation results will appear here")
                             .font(.caption)
                             .foregroundColor(AppTheme.secondaryText)
                             .multilineTextAlignment(.center)
                     }
-                    .padding()
+                    .padding(AppTheme.spacingXL)
                 } else {
                     List {
                         ForEach(groupedByDay, id: \.0) { day, entries in
@@ -151,19 +153,19 @@ struct HistoryRow: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
+        VStack(alignment: .leading, spacing: AppTheme.spacingSM) {
             HStack {
                 Text(entry.calculatorName)
-                    .font(.subheadline.bold())
+                    .font(.body.bold())
                     .foregroundColor(.white)
                 Spacer()
                 Text(timeString)
-                    .font(.caption2)
+                    .font(.caption)
                     .foregroundColor(AppTheme.secondaryText)
             }
 
             ForEach(entry.results) { result in
-                HStack(spacing: 4) {
+                HStack(spacing: AppTheme.spacingXS) {
                     Text(result.label)
                         .font(.caption)
                         .foregroundColor(AppTheme.secondaryText)
@@ -173,12 +175,12 @@ struct HistoryRow: View {
                         .foregroundColor(.white)
                     if !result.unit.isEmpty {
                         Text(result.unit)
-                            .font(.caption2)
+                            .font(.caption)
                             .foregroundColor(AppTheme.accent)
                     }
                 }
             }
         }
-        .padding(.vertical, 4)
+        .padding(.vertical, AppTheme.spacingXS)
     }
 }
